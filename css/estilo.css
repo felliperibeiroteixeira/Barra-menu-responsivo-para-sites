@@ -199,7 +199,7 @@ div {
         margin-top: 30px;  
     }
 
-@media(max-width:  610px) {
+@media(max-width:  620px) {
      #btnLogo {
         position: relative; 
         left: 50%; 
