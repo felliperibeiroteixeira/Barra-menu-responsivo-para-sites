@@ -1,0 +1,208 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'font-principal';
+    src: url("../fonts/Roboto-Light.ttf");
+}
+
+@font-face {
+    font-family: 'font-principal-negrito';
+    src: url("../fonts/Roboto-Medium.ttf");
+}
+
+* {
+    margin: 0; 
+    padding: 0;
+    font-family: 'font-principal';
+}
+
+nav, ul {
+    background: #eb3237;
+}
+
+nav {   
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    position: fixed;
+    width: 100%;
+    box-shadow: 1px 1px 1em #888;
+}
+
+#btnLogo {
+    position: relative; 
+    left: 10%; 
+    border: none; 
+    background: transparent; 
+    cursor: pointer;
+}
+
+#btnMenu {
+    margin: 0 13rem;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    font-family: 'font-principal-negrito';
+    font-weight: bold; 
+}
+
+span {
+    border-top: 4px solid; 
+    width: 30px; 
+    transition: 1s;
+}
+
+span::after, span::before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 4px;
+    background: white;
+    margin-top: 6px;
+    position: relative;
+    transition: .3s;
+}
+
+#btnMenu.active {
+    color: transparent;
+}
+
+#btnMenu.active span {
+    border-top: transparent; 
+    transform: rotate(100deg);
+}
+
+#btnMenu.active span::before {
+    transform: rotate(135deg);
+}
+
+#btnMenu.active span::after {
+    transform: rotate(-135deg); 
+    top: -9px;
+}
+
+ul {
+    position: absolute;    
+    width: 100%;
+    right: 0;
+    top: 0px;
+    height: 100vh;
+    text-align: end; 
+    transform: translateX(100%);
+    transition: .5s;
+    opacity: 0; 
+}
+
+ul.active {
+    transform: translateX(0); 
+    transition: .5s; 
+    opacity: 1;
+}
+
+#btnFechar {
+    padding: .8rem .5rem;
+    background: #c1272b;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 20rem;
+    margin-top: 300px;
+}
+
+#btnFechar::after, #btnFechar::before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 4px;
+    background: white;
+    margin-top: 6px;
+    transition: .3s;
+    position: relative;
+}
+
+#btnFechar::before {
+    transform: rotate(135deg);
+}
+
+#btnFechar::after {
+    transform: rotate(-135deg); 
+    top: -9px;
+}
+
+.menu {
+    margin: 0 20rem;
+    text-decoration: none;
+    color: white;    
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: bold;    
+} 
+
+li {
+    list-style: none;
+    margin-top: 20px;
+    transition: 1s;
+    cursor: pointer;
+    transform: translateX(100%);
+}
+
+li:hover {
+    background: #c1272b; 
+    transition: 1s;
+}
+
+div {
+    margin: 0 20rem;
+    margin-top: 150px;
+}
+
+.redes-sociais { 
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+@keyframes liFade {
+    from {
+        transform: translateX(100%);
+    } to {
+        transform: translateX(0);
+    }
+}
+
+@media(max-width: 1000px) {
+    #btnLogo {
+        position: relative; 
+        left: 50%; 
+        transform: translateX(-50%);
+    }
+
+    #btnMenu {
+        margin: 0 1rem; 
+        font-size: 0px;
+    }
+
+    #btnFechar {
+        margin: 04rem; 
+        margin-top: 200px;
+    }
+
+    .menu {
+        margin: 0 4rem;
+    }
+
+    div {
+        margin: 0 4rem; 
+        margin-top: 30px;  
+    }
+
+@media(max-width:  600px) {
+    .menu {
+        font-size: 23px; 
+        line-height: 35px;
+        font-family: 'font-principal-negrito'; 
+    }
+}
